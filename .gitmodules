@@ -1,0 +1,3 @@
+[submodule "WLGmail"]
+	path = WLGmail
+	url = https://github.com/wyattlam1/WLGmail.git
