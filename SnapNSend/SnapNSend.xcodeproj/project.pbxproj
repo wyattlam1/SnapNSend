@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB0613A419BCD25D006E8E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A319BCD25D006E8E9F /* Foundation.framework */; };
+		DB0613A619BCD25D006E8E9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A519BCD25D006E8E9F /* CoreGraphics.framework */; };
+		DB0613A819BCD25D006E8E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A719BCD25D006E8E9F /* UIKit.framework */; };
+		DB0613AE19BCD25D006E8E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0613AC19BCD25D006E8E9F /* InfoPlist.strings */; };
+		DB0613B019BCD25D006E8E9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613AF19BCD25D006E8E9F /* main.m */; };
+		DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */; };
+		DB0613B719BCD25D006E8E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0613B519BCD25D006E8E9F /* Main.storyboard */; };
+		DB0613BA19BCD25D006E8E9F /* SNSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B919BCD25D006E8E9F /* SNSMasterViewController.m */; };
+		DB0613BD19BCD25D006E8E9F /* SNSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613BC19BCD25D006E8E9F /* SNSDetailViewController.m */; };
+		DB0613BF19BCD25D006E8E9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB0613BE19BCD25D006E8E9F /* Images.xcassets */; };
+		DB0613C619BCD25D006E8E9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613C519BCD25D006E8E9F /* XCTest.framework */; };
+		DB0613C719BCD25D006E8E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A319BCD25D006E8E9F /* Foundation.framework */; };
+		DB0613C819BCD25D006E8E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A719BCD25D006E8E9F /* UIKit.framework */; };
+		DB0613D019BCD25D006E8E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0613CE19BCD25D006E8E9F /* InfoPlist.strings */; };
+		DB0613D219BCD25D006E8E9F /* SnapNSendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB0613C919BCD25D006E8E9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB06139819BCD25D006E8E9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB06139F19BCD25D006E8E9F;
+			remoteInfo = SnapNSend;
+		};
+		DB0613E119BCD26E006E8E9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB06134E19BBD470006E8E9F;
+			remoteInfo = WLGmail;
+		};
+		DB0613E319BCD26E006E8E9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB06135E19BBD470006E8E9F;
+			remoteInfo = WLGmailTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB0613A019BCD25D006E8E9F /* SnapNSend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapNSend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0613A319BCD25D006E8E9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DB0613A519BCD25D006E8E9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DB0613A719BCD25D006E8E9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DB0613AB19BCD25D006E8E9F /* SnapNSend-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnapNSend-Info.plist"; sourceTree = "<group>"; };
+		DB0613AD19BCD25D006E8E9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB0613AF19BCD25D006E8E9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB0613B119BCD25D006E8E9F /* SnapNSend-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnapNSend-Prefix.pch"; sourceTree = "<group>"; };
+		DB0613B219BCD25D006E8E9F /* SNSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSAppDelegate.h; sourceTree = "<group>"; };
+		DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSAppDelegate.m; sourceTree = "<group>"; };
+		DB0613B619BCD25D006E8E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB0613B819BCD25D006E8E9F /* SNSMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSMasterViewController.h; sourceTree = "<group>"; };
+		DB0613B919BCD25D006E8E9F /* SNSMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSMasterViewController.m; sourceTree = "<group>"; };
+		DB0613BB19BCD25D006E8E9F /* SNSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSDetailViewController.h; sourceTree = "<group>"; };
+		DB0613BC19BCD25D006E8E9F /* SNSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSDetailViewController.m; sourceTree = "<group>"; };
+		DB0613BE19BCD25D006E8E9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB0613C419BCD25D006E8E9F /* SnapNSendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapNSendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0613C519BCD25D006E8E9F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DB0613CD19BCD25D006E8E9F /* SnapNSendTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnapNSendTests-Info.plist"; sourceTree = "<group>"; };
+		DB0613CF19BCD25D006E8E9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnapNSendTests.m; sourceTree = "<group>"; };
+		DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WLGmail.xcodeproj; path = ../WLGmail/WLGmail.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB06139D19BCD25D006E8E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0613A619BCD25D006E8E9F /* CoreGraphics.framework in Frameworks */,
+				DB0613A819BCD25D006E8E9F /* UIKit.framework in Frameworks */,
+				DB0613A419BCD25D006E8E9F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB0613C119BCD25D006E8E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0613C619BCD25D006E8E9F /* XCTest.framework in Frameworks */,
+				DB0613C819BCD25D006E8E9F /* UIKit.framework in Frameworks */,
+				DB0613C719BCD25D006E8E9F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB06139719BCD25D006E8E9F = {
+			isa = PBXGroup;
+			children = (
+				DB0613A919BCD25D006E8E9F /* SnapNSend */,
+				DB0613CB19BCD25D006E8E9F /* SnapNSendTests */,
+				DB0613A219BCD25D006E8E9F /* Frameworks */,
+				DB0613A119BCD25D006E8E9F /* Products */,
+				DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		DB0613A119BCD25D006E8E9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613A019BCD25D006E8E9F /* SnapNSend.app */,
+				DB0613C419BCD25D006E8E9F /* SnapNSendTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB0613A219BCD25D006E8E9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613A319BCD25D006E8E9F /* Foundation.framework */,
+				DB0613A519BCD25D006E8E9F /* CoreGraphics.framework */,
+				DB0613A719BCD25D006E8E9F /* UIKit.framework */,
+				DB0613C519BCD25D006E8E9F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB0613A919BCD25D006E8E9F /* SnapNSend */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613B219BCD25D006E8E9F /* SNSAppDelegate.h */,
+				DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */,
+				DB0613B519BCD25D006E8E9F /* Main.storyboard */,
+				DB0613B819BCD25D006E8E9F /* SNSMasterViewController.h */,
+				DB0613B919BCD25D006E8E9F /* SNSMasterViewController.m */,
+				DB0613BB19BCD25D006E8E9F /* SNSDetailViewController.h */,
+				DB0613BC19BCD25D006E8E9F /* SNSDetailViewController.m */,
+				DB0613BE19BCD25D006E8E9F /* Images.xcassets */,
+				DB0613AA19BCD25D006E8E9F /* Supporting Files */,
+			);
+			path = SnapNSend;
+			sourceTree = "<group>";
+		};
+		DB0613AA19BCD25D006E8E9F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613AB19BCD25D006E8E9F /* SnapNSend-Info.plist */,
+				DB0613AC19BCD25D006E8E9F /* InfoPlist.strings */,
+				DB0613AF19BCD25D006E8E9F /* main.m */,
+				DB0613B119BCD25D006E8E9F /* SnapNSend-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB0613CB19BCD25D006E8E9F /* SnapNSendTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */,
+				DB0613CC19BCD25D006E8E9F /* Supporting Files */,
+			);
+			path = SnapNSendTests;
+			sourceTree = "<group>";
+		};
+		DB0613CC19BCD25D006E8E9F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613CD19BCD25D006E8E9F /* SnapNSendTests-Info.plist */,
+				DB0613CE19BCD25D006E8E9F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB0613DC19BCD26E006E8E9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613E219BCD26E006E8E9F /* libWLGmail.a */,
+				DB0613E419BCD26E006E8E9F /* WLGmailTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB06139F19BCD25D006E8E9F /* SnapNSend */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB0613D519BCD25D006E8E9F /* Build configuration list for PBXNativeTarget "SnapNSend" */;
+			buildPhases = (
+				DB06139C19BCD25D006E8E9F /* Sources */,
+				DB06139D19BCD25D006E8E9F /* Frameworks */,
+				DB06139E19BCD25D006E8E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapNSend;
+			productName = SnapNSend;
+			productReference = DB0613A019BCD25D006E8E9F /* SnapNSend.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB0613C319BCD25D006E8E9F /* SnapNSendTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB0613D819BCD25D006E8E9F /* Build configuration list for PBXNativeTarget "SnapNSendTests" */;
+			buildPhases = (
+				DB0613C019BCD25D006E8E9F /* Sources */,
+				DB0613C119BCD25D006E8E9F /* Frameworks */,
+				DB0613C219BCD25D006E8E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB0613CA19BCD25D006E8E9F /* PBXTargetDependency */,
+			);
+			name = SnapNSendTests;
+			productName = SnapNSendTests;
+			productReference = DB0613C419BCD25D006E8E9F /* SnapNSendTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB06139819BCD25D006E8E9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SNS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = WyattLam;
+				TargetAttributes = {
+					DB0613C319BCD25D006E8E9F = {
+						TestTargetID = DB06139F19BCD25D006E8E9F;
+					};
+				};
+			};
+			buildConfigurationList = DB06139B19BCD25D006E8E9F /* Build configuration list for PBXProject "SnapNSend" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB06139719BCD25D006E8E9F;
+			productRefGroup = DB0613A119BCD25D006E8E9F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DB0613DC19BCD26E006E8E9F /* Products */;
+					ProjectRef = DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DB06139F19BCD25D006E8E9F /* SnapNSend */,
+				DB0613C319BCD25D006E8E9F /* SnapNSendTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DB0613E219BCD26E006E8E9F /* libWLGmail.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libWLGmail.a;
+			remoteRef = DB0613E119BCD26E006E8E9F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB0613E419BCD26E006E8E9F /* WLGmailTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WLGmailTests.xctest;
+			remoteRef = DB0613E319BCD26E006E8E9F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB06139E19BCD25D006E8E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0613BF19BCD25D006E8E9F /* Images.xcassets in Resources */,
+				DB0613AE19BCD25D006E8E9F /* InfoPlist.strings in Resources */,
+				DB0613B719BCD25D006E8E9F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB0613C219BCD25D006E8E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0613D019BCD25D006E8E9F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB06139C19BCD25D006E8E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0613BA19BCD25D006E8E9F /* SNSMasterViewController.m in Sources */,
+				DB0613B019BCD25D006E8E9F /* main.m in Sources */,
+				DB0613BD19BCD25D006E8E9F /* SNSDetailViewController.m in Sources */,
+				DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB0613C019BCD25D006E8E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0613D219BCD25D006E8E9F /* SnapNSendTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB0613CA19BCD25D006E8E9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB06139F19BCD25D006E8E9F /* SnapNSend */;
+			targetProxy = DB0613C919BCD25D006E8E9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB0613AC19BCD25D006E8E9F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB0613AD19BCD25D006E8E9F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DB0613B519BCD25D006E8E9F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB0613B619BCD25D006E8E9F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB0613CE19BCD25D006E8E9F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB0613CF19BCD25D006E8E9F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB0613D319BCD25D006E8E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB0613D419BCD25D006E8E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB0613D619BCD25D006E8E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
+				INFOPLIST_FILE = "SnapNSend/SnapNSend-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DB0613D719BCD25D006E8E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
+				INFOPLIST_FILE = "SnapNSend/SnapNSend-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DB0613D919BCD25D006E8E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnapNSend.app/SnapNSend";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SnapNSendTests/SnapNSendTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DB0613DA19BCD25D006E8E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnapNSend.app/SnapNSend";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
+				INFOPLIST_FILE = "SnapNSendTests/SnapNSendTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB06139B19BCD25D006E8E9F /* Build configuration list for PBXProject "SnapNSend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB0613D319BCD25D006E8E9F /* Debug */,
+				DB0613D419BCD25D006E8E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB0613D519BCD25D006E8E9F /* Build configuration list for PBXNativeTarget "SnapNSend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB0613D619BCD25D006E8E9F /* Debug */,
+				DB0613D719BCD25D006E8E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DB0613D819BCD25D006E8E9F /* Build configuration list for PBXNativeTarget "SnapNSendTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB0613D919BCD25D006E8E9F /* Debug */,
+				DB0613DA19BCD25D006E8E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB06139819BCD25D006E8E9F /* Project object */;
+}
