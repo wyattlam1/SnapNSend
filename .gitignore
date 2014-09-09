@@ -7,3 +7,5 @@
 # Pods/
 
 *.DS_Store
+SnapNSend/SnapNSend.xcodeproj/project.xcworkspace/xcuserdata/*
+SnapNSend/SnapNSend.xcodeproj/xcuserdata/*

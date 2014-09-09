@@ -14,14 +14,14 @@
 		DB0613B019BCD25D006E8E9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613AF19BCD25D006E8E9F /* main.m */; };
 		DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */; };
 		DB0613B719BCD25D006E8E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0613B519BCD25D006E8E9F /* Main.storyboard */; };
-		DB0613BA19BCD25D006E8E9F /* SNSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B919BCD25D006E8E9F /* SNSMasterViewController.m */; };
-		DB0613BD19BCD25D006E8E9F /* SNSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613BC19BCD25D006E8E9F /* SNSDetailViewController.m */; };
+		DB0613BA19BCD25D006E8E9F /* SNSPhotoGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */; };
 		DB0613BF19BCD25D006E8E9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB0613BE19BCD25D006E8E9F /* Images.xcassets */; };
 		DB0613C619BCD25D006E8E9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613C519BCD25D006E8E9F /* XCTest.framework */; };
 		DB0613C719BCD25D006E8E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A319BCD25D006E8E9F /* Foundation.framework */; };
 		DB0613C819BCD25D006E8E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A719BCD25D006E8E9F /* UIKit.framework */; };
 		DB0613D019BCD25D006E8E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0613CE19BCD25D006E8E9F /* InfoPlist.strings */; };
 		DB0613D219BCD25D006E8E9F /* SnapNSendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */; };
+		DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +60,8 @@
 		DB0613B219BCD25D006E8E9F /* SNSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSAppDelegate.h; sourceTree = "<group>"; };
 		DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSAppDelegate.m; sourceTree = "<group>"; };
 		DB0613B619BCD25D006E8E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB0613B819BCD25D006E8E9F /* SNSMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSMasterViewController.h; sourceTree = "<group>"; };
-		DB0613B919BCD25D006E8E9F /* SNSMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSMasterViewController.m; sourceTree = "<group>"; };
-		DB0613BB19BCD25D006E8E9F /* SNSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSDetailViewController.h; sourceTree = "<group>"; };
-		DB0613BC19BCD25D006E8E9F /* SNSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSDetailViewController.m; sourceTree = "<group>"; };
+		DB0613B819BCD25D006E8E9F /* SNSPhotoGalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SNSPhotoGalleryViewController.h; path = Views/SNSPhotoGalleryViewController.h; sourceTree = "<group>"; };
+		DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SNSPhotoGalleryViewController.m; path = Views/SNSPhotoGalleryViewController.m; sourceTree = "<group>"; };
 		DB0613BE19BCD25D006E8E9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB0613C419BCD25D006E8E9F /* SnapNSendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapNSendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0613C519BCD25D006E8E9F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -71,6 +69,9 @@
 		DB0613CF19BCD25D006E8E9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnapNSendTests.m; sourceTree = "<group>"; };
 		DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WLGmail.xcodeproj; path = ../WLGmail/WLGmail.xcodeproj; sourceTree = "<group>"; };
+		DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSMasterViewController.h; path = Views/SNSMasterViewController.h; sourceTree = "<group>"; };
+		DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSMasterViewController.m; path = Views/SNSMasterViewController.m; sourceTree = "<group>"; };
+		DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "../WLGmail/GTL/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +121,7 @@
 		DB0613A219BCD25D006E8E9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */,
 				DB0613A319BCD25D006E8E9F /* Foundation.framework */,
 				DB0613A519BCD25D006E8E9F /* CoreGraphics.framework */,
 				DB0613A719BCD25D006E8E9F /* UIKit.framework */,
@@ -131,13 +133,10 @@
 		DB0613A919BCD25D006E8E9F /* SnapNSend */ = {
 			isa = PBXGroup;
 			children = (
+				DB8D8BC319BEC17E009DC1CB /* Views */,
 				DB0613B219BCD25D006E8E9F /* SNSAppDelegate.h */,
 				DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */,
 				DB0613B519BCD25D006E8E9F /* Main.storyboard */,
-				DB0613B819BCD25D006E8E9F /* SNSMasterViewController.h */,
-				DB0613B919BCD25D006E8E9F /* SNSMasterViewController.m */,
-				DB0613BB19BCD25D006E8E9F /* SNSDetailViewController.h */,
-				DB0613BC19BCD25D006E8E9F /* SNSDetailViewController.m */,
 				DB0613BE19BCD25D006E8E9F /* Images.xcassets */,
 				DB0613AA19BCD25D006E8E9F /* Supporting Files */,
 			);
@@ -180,6 +179,17 @@
 				DB0613E419BCD26E006E8E9F /* WLGmailTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8D8BC319BEC17E009DC1CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB0613B819BCD25D006E8E9F /* SNSPhotoGalleryViewController.h */,
+				DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */,
+				DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */,
+				DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,10 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB0613BA19BCD25D006E8E9F /* SNSMasterViewController.m in Sources */,
+				DB0613BA19BCD25D006E8E9F /* SNSPhotoGalleryViewController.m in Sources */,
 				DB0613B019BCD25D006E8E9F /* main.m in Sources */,
-				DB0613BD19BCD25D006E8E9F /* SNSDetailViewController.m in Sources */,
 				DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */,
+				DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +444,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
 				INFOPLIST_FILE = "SnapNSend/SnapNSend-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/wyattlam/workspace/SnapNSend/WLGmail/GTL/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -447,6 +461,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
 				INFOPLIST_FILE = "SnapNSend/SnapNSend-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/wyattlam/workspace/SnapNSend/WLGmail/GTL/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -511,6 +529,7 @@
 				DB0613D719BCD25D006E8E9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB0613D819BCD25D006E8E9F /* Build configuration list for PBXNativeTarget "SnapNSendTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +538,7 @@
 				DB0613DA19BCD25D006E8E9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
