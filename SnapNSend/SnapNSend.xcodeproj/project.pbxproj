@@ -22,6 +22,8 @@
 		DB0613D019BCD25D006E8E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0613CE19BCD25D006E8E9F /* InfoPlist.strings */; };
 		DB0613D219BCD25D006E8E9F /* SnapNSendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */; };
 		DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */; };
+		DB8D8BC819BEC673009DC1CB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */; };
+		DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WLGmail.xcodeproj; path = ../WLGmail/WLGmail.xcodeproj; sourceTree = "<group>"; };
 		DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSMasterViewController.h; path = Views/SNSMasterViewController.h; sourceTree = "<group>"; };
 		DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSMasterViewController.m; path = Views/SNSMasterViewController.m; sourceTree = "<group>"; };
+		DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		DB8D8BC919C1181B009DC1CB /* SNSPhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSPhotoViewCell.h; path = Views/SNSPhotoViewCell.h; sourceTree = "<group>"; };
+		DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSPhotoViewCell.m; path = Views/SNSPhotoViewCell.m; sourceTree = "<group>"; };
 		DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "../WLGmail/GTL/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8D8BC819BEC673009DC1CB /* AssetsLibrary.framework in Frameworks */,
 				DB0613A619BCD25D006E8E9F /* CoreGraphics.framework in Frameworks */,
 				DB0613A819BCD25D006E8E9F /* UIKit.framework in Frameworks */,
 				DB0613A419BCD25D006E8E9F /* Foundation.framework in Frameworks */,
@@ -121,6 +127,7 @@
 		DB0613A219BCD25D006E8E9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */,
 				DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */,
 				DB0613A319BCD25D006E8E9F /* Foundation.framework */,
 				DB0613A519BCD25D006E8E9F /* CoreGraphics.framework */,
@@ -188,6 +195,8 @@
 				DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */,
 				DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */,
 				DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */,
+				DB8D8BC919C1181B009DC1CB /* SNSPhotoViewCell.h */,
+				DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +324,7 @@
 			files = (
 				DB0613BA19BCD25D006E8E9F /* SNSPhotoGalleryViewController.m in Sources */,
 				DB0613B019BCD25D006E8E9F /* main.m in Sources */,
+				DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */,
 				DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */,
 				DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */,
 			);
