@@ -8,6 +8,8 @@
 
 #import "SNSPhotoViewCell.h"
 
+static const int SNSCellBorder = 6;
+
 @interface SNSPhotoViewCell()
 @property (nonatomic) UIImageView *thumbnailView;
 @end
@@ -18,11 +20,16 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.layer.borderColor = [UIColor colorWithRed:124/255.f green:181/255.f blue:222/255.f alpha:1.0f].CGColor;
+        
+        // thumbnailView
         _thumbnailView = [[UIImageView alloc] initWithFrame:(CGRect){0,0, .size = frame.size}];
         [self addSubview:_thumbnailView];
     }
     return self;
 }
+
+#pragma mark - Properties
 
 - (void)setThumbnail:(CGImageRef)thumbnail
 {
@@ -33,13 +40,26 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setSelected:(BOOL)selected
 {
-    // Drawing code
+    [super setSelected:selected];
+    if (selected) {
+        [self animateBorderFromWidth:@0 to:[NSNumber numberWithInt:SNSCellBorder]];
+    } else {
+        [self animateBorderFromWidth:[NSNumber numberWithInt:SNSCellBorder] to:@0];
+    }
 }
-*/
+
+#pragma mark - Private
+
+- (void)animateBorderFromWidth:(NSNumber *)fromWidth to:(NSNumber *)toWidth
+{
+    CABasicAnimation *width = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
+    width.fromValue = fromWidth;
+    width.toValue   = toWidth;
+    width.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [self.layer addAnimation:width forKey:@"width"];
+    self.layer.borderWidth = toWidth.integerValue;
+}
 
 @end

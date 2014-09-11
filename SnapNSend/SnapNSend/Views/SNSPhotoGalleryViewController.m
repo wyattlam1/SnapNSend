@@ -15,6 +15,7 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 @interface SNSPhotoGalleryViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, readonly) ALAssetsLibrary *assetLibrary;
 @property (nonatomic, readonly) NSMutableArray *photos;
+@property (nonatomic, readonly) NSMutableArray *selectedPhotos;
 @end
 
 @implementation SNSPhotoGalleryViewController
@@ -27,11 +28,11 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.collectionView registerClass:[SNSPhotoViewCell class] forCellWithReuseIdentifier:PhotoViewCell];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    
     _photos = [NSMutableArray new];
+    _selectedPhotos = [NSMutableArray new];
     
+    [self setupCollectionView];
+
     _assetLibrary = [ALAssetsLibrary new];
     [_assetLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         if (group) {
@@ -49,6 +50,13 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
             NSLog(@"%@", error);
         }
     }];
+}
+
+- (void)setupCollectionView
+{
+    [self.collectionView registerClass:[SNSPhotoViewCell class] forCellWithReuseIdentifier:PhotoViewCell];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
+    self.collectionView.allowsMultipleSelection = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +79,6 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
     
     SNSPhotoViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:PhotoViewCell forIndexPath:indexPath];
     cell.thumbnail = thumbnail;
-    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -79,12 +86,16 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    NSInteger selectedIndex = indexPath.row;
+    [_selectedPhotos addObject:[_photos objectAtIndex:selectedIndex]];
+    
+    SNSPhotoViewCell *cell = (SNSPhotoViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    cell.selected = YES;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [_selectedPhotos removeObject:[_photos objectAtIndex:indexPath.row]];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
