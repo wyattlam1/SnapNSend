@@ -8,26 +8,56 @@
 
 #import "SNSEmailGroupViewCell.h"
 
+static const float kThumbnailAlphaValue = 0.3f;
+
+@interface SNSEmailGroupViewCell()
+@property (nonatomic) UIImageView *thumbnailView;
+@end
+
 @implementation SNSEmailGroupViewCell
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.backgroundColor = [UIColor whiteColor].CGColor;
-        self.alpha = 0.3f;
         self.layer.cornerRadius = self.frame.size.width / 2.f;
+        self.layer.borderColor = [UIColor blackColor].CGColor;
+        self.layer.masksToBounds = YES;
+        
+        _thumbnailView = [[UIImageView alloc] initWithFrame:(CGRect){0,0, .size = frame.size}];
+        [self addSubview:_thumbnailView];
     }
     return self;
+}
+
+- (void)setThumbnail:(UIImage *)thumbnail
+{
+    if (_thumbnail != thumbnail) {
+        
+        CGFloat width = thumbnail.size.width;
+        CGFloat height = thumbnail.size.height;
+        CGFloat ratio;
+        if (width < height) {
+            ratio = width / _thumbnailView.frame.size.width;
+        } else {
+            ratio = height / _thumbnailView.frame.size.height;
+        }
+        
+        _thumbnail = [UIImage imageWithCGImage:thumbnail.CGImage scale:ratio orientation:UIImageOrientationUp];
+        _thumbnailView.frame = (CGRect){(_thumbnailView.frame.size.width - _thumbnail.size.width) / 2.f, 0, .size = _thumbnail.size};
+        _thumbnailView.image = _thumbnail;
+        _thumbnailView.alpha = kThumbnailAlphaValue;
+        [_thumbnailView setNeedsDisplay];
+    }
 }
 
 - (void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
     if (selected) {
-        self.alpha = 1.f;
+        _thumbnailView.alpha = 1.f;
     } else {
-        self.alpha = 0.3f;
+        _thumbnailView.alpha = kThumbnailAlphaValue;
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import "SNSEmailGroupViewController.h"
 #import "SNSEmailGroupViewCell.h"
+#import "SNSEmailGroup.h"
 #import "UIColor+SNSAdditions.h"
 
 static const NSInteger EmailGroupViewCellWidth = 50;
@@ -39,9 +40,16 @@ static NSString *EmailGroupViewCell = @"EmailGroupCell";
     self.collectionView.backgroundColor = [UIColor sns_darkGray];
     
 #warning remove
-    [_groups addObject:@1];
-    [_groups addObject:@3];
-    [_groups addObject:@2];
+    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm6.staticflickr.com/5592/14710378279_d9074a1d76_m_d.jpg"]]]];
+    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm4.staticflickr.com/3902/14674914914_df3fd400e3_m_d.jpg"]]]];
+    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm8.staticflickr.com/7283/9457052576_ea62c41e07_m_d.jpg"]]]];
+    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm8.staticflickr.com/7416/9252420074_073f15d95f_m_d.jpg"]]]];
+}
+
+- (UIImage *)imageFromURL:(NSURL *)imageURL
+{
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    return [UIImage imageWithData:imageData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +67,9 @@ static NSString *EmailGroupViewCell = @"EmailGroupCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    SNSEmailGroup *group = [_groups objectAtIndex:indexPath.row];
     SNSEmailGroupViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:EmailGroupViewCell forIndexPath:indexPath];
+    cell.thumbnail = group.thumbnail;
     return cell;
 }
 

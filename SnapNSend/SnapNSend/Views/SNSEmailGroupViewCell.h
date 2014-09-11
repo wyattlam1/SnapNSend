@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SNSEmailGroupViewCell : UICollectionViewCell
-
+@property (nonatomic) UIImage *thumbnail;
 @end
