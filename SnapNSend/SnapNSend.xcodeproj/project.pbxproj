@@ -24,6 +24,8 @@
 		DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */; };
 		DB8D8BC819BEC673009DC1CB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */; };
 		DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */; };
+		DB8D8BD219C153D5009DC1CB /* UIColor+SNSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD119C153D5009DC1CB /* UIColor+SNSAdditions.m */; };
+		DB8D8BD519C159B5009DC1CB /* SNSEmailGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DB8D8BC919C1181B009DC1CB /* SNSPhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSPhotoViewCell.h; path = Views/SNSPhotoViewCell.h; sourceTree = "<group>"; };
 		DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSPhotoViewCell.m; path = Views/SNSPhotoViewCell.m; sourceTree = "<group>"; };
+		DB8D8BD019C153D5009DC1CB /* UIColor+SNSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SNSAdditions.h"; path = "Categories/UIColor+SNSAdditions.h"; sourceTree = "<group>"; };
+		DB8D8BD119C153D5009DC1CB /* UIColor+SNSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SNSAdditions.m"; path = "Categories/UIColor+SNSAdditions.m"; sourceTree = "<group>"; };
+		DB8D8BD319C159B5009DC1CB /* SNSEmailGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSEmailGroupViewController.h; path = Views/SNSEmailGroupViewController.h; sourceTree = "<group>"; };
+		DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSEmailGroupViewController.m; path = Views/SNSEmailGroupViewController.m; sourceTree = "<group>"; };
 		DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "../WLGmail/GTL/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,12 +146,13 @@
 		DB0613A919BCD25D006E8E9F /* SnapNSend */ = {
 			isa = PBXGroup;
 			children = (
-				DB8D8BC319BEC17E009DC1CB /* Views */,
+				DB8D8BCC19C15344009DC1CB /* Categories */,
+				DB0613BE19BCD25D006E8E9F /* Images.xcassets */,
+				DB0613B519BCD25D006E8E9F /* Main.storyboard */,
 				DB0613B219BCD25D006E8E9F /* SNSAppDelegate.h */,
 				DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */,
-				DB0613B519BCD25D006E8E9F /* Main.storyboard */,
-				DB0613BE19BCD25D006E8E9F /* Images.xcassets */,
 				DB0613AA19BCD25D006E8E9F /* Supporting Files */,
+				DB8D8BC319BEC17E009DC1CB /* Views */,
 			);
 			path = SnapNSend;
 			sourceTree = "<group>";
@@ -191,14 +198,25 @@
 		DB8D8BC319BEC17E009DC1CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DB0613B819BCD25D006E8E9F /* SNSPhotoGalleryViewController.h */,
-				DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */,
+				DB8D8BD319C159B5009DC1CB /* SNSEmailGroupViewController.h */,
+				DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */,
 				DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */,
 				DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */,
+				DB0613B819BCD25D006E8E9F /* SNSPhotoGalleryViewController.h */,
+				DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */,
 				DB8D8BC919C1181B009DC1CB /* SNSPhotoViewCell.h */,
 				DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		DB8D8BCC19C15344009DC1CB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D8BD019C153D5009DC1CB /* UIColor+SNSAdditions.h */,
+				DB8D8BD119C153D5009DC1CB /* UIColor+SNSAdditions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +342,8 @@
 			files = (
 				DB0613BA19BCD25D006E8E9F /* SNSPhotoGalleryViewController.m in Sources */,
 				DB0613B019BCD25D006E8E9F /* main.m in Sources */,
+				DB8D8BD219C153D5009DC1CB /* UIColor+SNSAdditions.m in Sources */,
+				DB8D8BD519C159B5009DC1CB /* SNSEmailGroupViewController.m in Sources */,
 				DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */,
 				DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */,
 				DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */,

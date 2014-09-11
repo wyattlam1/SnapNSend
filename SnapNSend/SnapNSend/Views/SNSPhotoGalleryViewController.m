@@ -8,7 +8,10 @@
 
 #import "SNSPhotoGalleryViewController.h"
 #import "SNSPhotoViewCell.h"
+#import "SNSMasterViewController.h"
 #import "AssetsLibrary/AssetsLibrary.h"
+
+#import "UIColor+SNSAdditions.h"
 
 static NSString *PhotoViewCell = @"PhotoViewCell";
 
@@ -16,6 +19,7 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 @property (nonatomic, readonly) ALAssetsLibrary *assetLibrary;
 @property (nonatomic, readonly) NSMutableArray *photos;
 @property (nonatomic, readonly) NSMutableArray *selectedPhotos;
+@property (nonatomic) CGFloat lastScrollPosition;
 @end
 
 @implementation SNSPhotoGalleryViewController
@@ -55,14 +59,41 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 - (void)setupCollectionView
 {
     [self.collectionView registerClass:[SNSPhotoViewCell class] forCellWithReuseIdentifier:PhotoViewCell];
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.1f alpha:1.0f];
+    self.collectionView.backgroundColor = [UIColor sns_darkGray];
     self.collectionView.allowsMultipleSelection = YES;
+    self.collectionView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat newY = scrollView.contentOffset.y;
+    if ([self _scrolledWithinContent:scrollView]) {
+        if (newY < _lastScrollPosition) {
+            [self.delegate scrollViewDidScroll:scrollView inDirection:SNSScrollViewDirectionUp];
+        } else {
+            [self.delegate scrollViewDidScroll:scrollView inDirection:SNSScrollViewDirectionDown];
+        }
+        _lastScrollPosition = newY;
+    } else if (newY < 0) {
+        // special case for scrolling above top
+        [self.delegate scrollViewDidScroll:scrollView inDirection:SNSScrollViewDirectionUp];
+    }
+}
+
+- (BOOL)_scrolledWithinContent:(UIScrollView *)scrollView
+{
+    CGFloat newY = scrollView.contentOffset.y;
+    BOOL scrolledAboveTop = scrollView.contentOffset.y < 0;
+    BOOL scrolledBelowBottom = (newY + scrollView.bounds.size.height) > scrollView.contentSize.height;
+    return !scrolledAboveTop && !scrolledBelowBottom;
 }
 
 #pragma mark - UICollectionViewDataSource

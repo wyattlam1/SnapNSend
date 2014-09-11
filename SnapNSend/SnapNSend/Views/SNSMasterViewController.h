@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SNSPhotoGalleryViewController.h"
 
-@interface SNSMasterViewController : UIViewController
-
+@interface SNSMasterViewController : UIViewController <SNSPhotoGalleryViewDelegate>
 @end

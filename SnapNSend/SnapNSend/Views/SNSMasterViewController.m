@@ -9,8 +9,14 @@
 #import "SNSMasterViewController.h"
 #import "SNSPhotoGalleryViewController.h"
 
-@interface SNSMasterViewController ()
-@property (nonatomic, readonly) SNSPhotoGalleryViewController *photoGalleryViewController;
+#import "UIColor+SNSAdditions.h"
+
+static const NSInteger SNSBottomKeyboardPadding = 3;
+
+@interface SNSMasterViewController () <UITextFieldDelegate>
+@property (nonatomic) SNSPhotoGalleryViewController *photoGalleryViewController;
+@property (nonatomic, weak) IBOutlet UITextField *subjectTextField;
+@property (nonatomic) CGFloat defaultOrignY;
 @end
 
 @implementation SNSMasterViewController
@@ -24,15 +30,82 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor sns_darkGray];
+    _defaultOrignY = self.view.frame.origin.y;
+    
+    self.subjectTextField.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsShown:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsHidden:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"photoGalleryCollectionView_embed"]) {
+        _photoGalleryViewController = (SNSPhotoGalleryViewController *)[segue destinationViewController];
+        _photoGalleryViewController.delegate = self;
+    }
+}
+
+#pragma mark - Keyboard
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView inDirection:(SNSScrolLViewDirection)direction
+{
+    if (direction == SNSScrollViewDirectionUp) {
+        [self.view endEditing:YES];
+    }
+}
+
+- (void)keyboardIsShown:(NSNotification *)notification
+{
+    NSDictionary *info = notification.userInfo;
+    NSValue *value = info[UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardFrame = [value CGRectValue];
+    [self _shouldHideKeyBoard:NO keyboardHeight:keyboardFrame.size.height];
+}
+
+- (void)keyboardIsHidden:(NSNotification *)notification
+{
+    NSDictionary *info = notification.userInfo;
+    NSValue *value = info[UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardFrame = [value CGRectValue];
+    [self _shouldHideKeyBoard:YES keyboardHeight:keyboardFrame.size.height];
+}
+
+- (void)_shouldHideKeyBoard:(BOOL)shouldHide keyboardHeight:(CGFloat)height
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        CGFloat newOriginY = _defaultOrignY;
+        if (!shouldHide) {
+            newOriginY = -(height + SNSBottomKeyboardPadding);
+        }
+        self.view.frame = (CGRect){0, newOriginY, .size = self.view.frame.size};
+    }];
+}
+
+#pragma mark - Subject Text Field
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
 }
 
 /*

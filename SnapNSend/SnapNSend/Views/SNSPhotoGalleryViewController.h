@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SNSPhotoGalleryViewController : UICollectionViewController
+typedef enum {
+    SNSScrollViewDirectionDown,
+    SNSScrollViewDirectionUp
+} SNSScrolLViewDirection;
 
+@protocol SNSPhotoGalleryViewDelegate <NSObject>
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView inDirection:(SNSScrolLViewDirection)direction;
+@end
+
+@interface SNSPhotoGalleryViewController : UICollectionViewController
+@property (nonatomic, weak) id<SNSPhotoGalleryViewDelegate> delegate;
 @end
