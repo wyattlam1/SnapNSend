@@ -8,15 +8,29 @@
 
 #import "SNSPhotoViewCell.h"
 
+@interface SNSPhotoViewCell()
+@property (nonatomic) UIImageView *thumbnailView;
+@end
+
 @implementation SNSPhotoViewCell
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _thumbnailView = [[UIImageView alloc] initWithFrame:(CGRect){0,0, .size = frame.size}];
+        [self addSubview:_thumbnailView];
     }
     return self;
+}
+
+- (void)setThumbnail:(CGImageRef)thumbnail
+{
+    if (thumbnail && (_thumbnail != thumbnail)) {
+        _thumbnail = thumbnail;
+        _thumbnailView.image = [UIImage imageWithCGImage:_thumbnail];
+        [_thumbnailView setNeedsDisplay];
+    }
 }
 
 /*

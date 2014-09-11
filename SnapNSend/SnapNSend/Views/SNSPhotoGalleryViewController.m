@@ -22,6 +22,14 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.collectionView registerClass:[SNSPhotoViewCell class] forCellWithReuseIdentifier:PhotoViewCell];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
     _photos = [NSMutableArray new];
     
     _assetLibrary = [ALAssetsLibrary new];
@@ -30,21 +38,17 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
             [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
                 if (result) {
                     [_photos addObject:result];
+                } else {
+                    NSLog(@"NO RESULT: %ld", index);
                 }
             }];
+            [self.collectionView reloadData];
         }
-        [self.collectionView reloadData];
     } failureBlock:^(NSError *error) {
         if (error) {
             NSLog(@"%@", error);
         }
     }];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.collectionView registerClass:[SNSPhotoViewCell class] forCellWithReuseIdentifier:PhotoViewCell];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,14 +64,13 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
     return _photos.count;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return _photos.count;
-}
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:PhotoViewCell forIndexPath:indexPath];
+    ALAsset *asset = [_photos objectAtIndex:indexPath.row];
+    CGImageRef thumbnail = asset.thumbnail;
+    
+    SNSPhotoViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:PhotoViewCell forIndexPath:indexPath];
+    cell.thumbnail = thumbnail;
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
@@ -86,12 +89,13 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(100, 100);
+    CGFloat width = CGRectGetWidth(self.view.frame) / 3.f - 2.f;
+    return CGSizeMake(width, width);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
 }
 
 @end

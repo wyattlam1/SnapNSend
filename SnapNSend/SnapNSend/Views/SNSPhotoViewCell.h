@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SNSPhotoViewCell : UICollectionViewCell
-
+@property (nonatomic) CGImageRef thumbnail;
 @end
