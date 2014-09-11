@@ -26,6 +26,7 @@
 		DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */; };
 		DB8D8BD219C153D5009DC1CB /* UIColor+SNSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD119C153D5009DC1CB /* UIColor+SNSAdditions.m */; };
 		DB8D8BD519C159B5009DC1CB /* SNSEmailGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */; };
+		DB8D8BD819C22032009DC1CB /* SNSEmailGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD719C22032009DC1CB /* SNSEmailGroupViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		DB8D8BD119C153D5009DC1CB /* UIColor+SNSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SNSAdditions.m"; path = "Categories/UIColor+SNSAdditions.m"; sourceTree = "<group>"; };
 		DB8D8BD319C159B5009DC1CB /* SNSEmailGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSEmailGroupViewController.h; path = Views/SNSEmailGroupViewController.h; sourceTree = "<group>"; };
 		DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSEmailGroupViewController.m; path = Views/SNSEmailGroupViewController.m; sourceTree = "<group>"; };
+		DB8D8BD619C22032009DC1CB /* SNSEmailGroupViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSEmailGroupViewCell.h; path = Views/SNSEmailGroupViewCell.h; sourceTree = "<group>"; };
+		DB8D8BD719C22032009DC1CB /* SNSEmailGroupViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSEmailGroupViewCell.m; path = Views/SNSEmailGroupViewCell.m; sourceTree = "<group>"; };
 		DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "../WLGmail/GTL/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +201,8 @@
 		DB8D8BC319BEC17E009DC1CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB8D8BD619C22032009DC1CB /* SNSEmailGroupViewCell.h */,
+				DB8D8BD719C22032009DC1CB /* SNSEmailGroupViewCell.m */,
 				DB8D8BD319C159B5009DC1CB /* SNSEmailGroupViewController.h */,
 				DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */,
 				DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */,
@@ -346,6 +351,7 @@
 				DB8D8BD519C159B5009DC1CB /* SNSEmailGroupViewController.m in Sources */,
 				DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */,
 				DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */,
+				DB8D8BD819C22032009DC1CB /* SNSEmailGroupViewCell.m in Sources */,
 				DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
