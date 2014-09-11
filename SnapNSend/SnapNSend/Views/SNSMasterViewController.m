@@ -16,6 +16,7 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 @interface SNSMasterViewController () <UITextFieldDelegate>
 @property (nonatomic) SNSPhotoGalleryViewController *photoGalleryViewController;
 @property (nonatomic, weak) IBOutlet UITextField *subjectTextField;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (nonatomic) CGFloat defaultOrignY;
 @end
 
@@ -97,6 +98,16 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 }
 
 #pragma mark - Subject Text Field
+- (IBAction)touchDownSendEmail:(id)sender
+{
+    _sendButton.backgroundColor = [UIColor sns_lightBlue];
+}
+
+- (IBAction)sendEmail:(id)sender
+{
+    NSLog(@"SENDING");
+    _sendButton.backgroundColor = [UIColor whiteColor];
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {

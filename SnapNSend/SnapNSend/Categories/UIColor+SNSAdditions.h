@@ -12,4 +12,6 @@
 
 + (UIColor *)sns_darkGray;
 
++ (UIColor *)sns_lightBlue;
+
 @end

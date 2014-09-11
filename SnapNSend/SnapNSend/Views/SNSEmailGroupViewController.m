@@ -7,6 +7,7 @@
 //
 
 #import "SNSEmailGroupViewController.h"
+#import "UIColor+SNSAdditions.h"
 
 @interface SNSEmailGroupViewController ()
 
@@ -26,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor sns_darkGray];
 }
 
 - (void)didReceiveMemoryWarning

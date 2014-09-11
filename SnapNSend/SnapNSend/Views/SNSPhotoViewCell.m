@@ -7,6 +7,7 @@
 //
 
 #import "SNSPhotoViewCell.h"
+#import "UIColor+SNSAdditions.h"
 
 static const int SNSCellBorder = 6;
 
@@ -20,7 +21,7 @@ static const int SNSCellBorder = 6;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.borderColor = [UIColor colorWithRed:124/255.f green:181/255.f blue:222/255.f alpha:1.0f].CGColor;
+        self.layer.borderColor = [UIColor sns_lightBlue].CGColor;
         
         // thumbnailView
         _thumbnailView = [[UIImageView alloc] initWithFrame:(CGRect){0,0, .size = frame.size}];

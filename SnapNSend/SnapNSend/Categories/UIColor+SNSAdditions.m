@@ -15,4 +15,9 @@
     return [UIColor colorWithWhite:0.1f alpha:1.0f];
 }
 
++ (UIColor *)sns_lightBlue
+{
+    return [UIColor colorWithRed:124/255.f green:181/255.f blue:222/255.f alpha:1.0f];
+}
+
 @end
