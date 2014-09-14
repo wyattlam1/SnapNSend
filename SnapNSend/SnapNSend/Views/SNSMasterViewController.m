@@ -8,28 +8,30 @@
 
 #import "SNSMasterViewController.h"
 #import "SNSPhotoGalleryViewController.h"
-
+#import "SNSEmailGroupViewController.h"
+#import "SNSEmailGroup.h"
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "WLGmail/WLGmailMessage.h"
+#import "WLGmail/WLGmailAddress.h"
+#import "WLGmail/WLGmailService.h"
 #import "UIColor+SNSAdditions.h"
+
+static NSString *const kClientID = @"186276393028-h84qv12meolpht4sa003csrlt74sldhj.apps.googleusercontent.com";
+static NSString *const kClientSecret = @"KqRG4g83Xtq_-twoLoBFz171";
+static NSString *const kKeychainItemName = @"zaizaiwyatt";
 
 static const NSInteger SNSBottomKeyboardPadding = 3;
 
 @interface SNSMasterViewController () <UITextFieldDelegate>
+@property (nonatomic) WLGmailService *gmailService;
 @property (nonatomic) SNSPhotoGalleryViewController *photoGalleryViewController;
+@property (nonatomic) SNSEmailGroupViewController *emailGroupViewController;
 @property (nonatomic, weak) IBOutlet UITextField *subjectTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (nonatomic) CGFloat defaultOrignY;
 @end
 
 @implementation SNSMasterViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-
-    }
-    return self;
-}
 
 - (void)dealloc
 {
@@ -39,6 +41,9 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self _setupGmailService];
+    
     self.view.backgroundColor = [UIColor sns_darkGray];
     _defaultOrignY = self.view.frame.origin.y;
     
@@ -46,6 +51,23 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsHidden:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)_setupGmailService
+{
+    GTMOAuth2Authentication *auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName clientID:kClientID clientSecret:kClientSecret];
+    if (auth) {
+        GTMOAuth2ViewControllerTouch *authViewController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:@"" clientID:kClientID clientSecret:kClientSecret keychainItemName:kKeychainItemName completionHandler:^(GTMOAuth2ViewControllerTouch *viewController, GTMOAuth2Authentication *auth, NSError *error) {
+            if (auth && !error) {
+                _gmailService = [[WLGmailService alloc] initWithEmailAddress:@"wyatt.lam1@gmail.com" authorizer:auth];
+            } else {
+                NSLog(@"Failed to authenticate to Gmail: %@", error);
+            }
+        }];
+        [self.navigationController pushViewController:authViewController animated:YES];
+    } else {
+        _gmailService = [[WLGmailService alloc] initWithEmailAddress:@"wyatt.lam1@gmail.com" authorizer:auth];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +80,8 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
     if ([segue.identifier isEqualToString:@"photoGalleryCollectionView_embed"]) {
         _photoGalleryViewController = (SNSPhotoGalleryViewController *)[segue destinationViewController];
         _photoGalleryViewController.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"emailGroupCollectionView_embed"]) {
+        _emailGroupViewController = (SNSEmailGroupViewController *)[segue destinationViewController];
     }
 }
 
@@ -105,8 +129,18 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 
 - (IBAction)sendEmail:(id)sender
 {
-    NSLog(@"SENDING");
     _sendButton.backgroundColor = [UIColor whiteColor];
+    
+    NSArray *emailGroups = _emailGroupViewController.selectedGroups;
+    WLGmailAddress *fromAddress = [[WLGmailAddress alloc] initWithEmailAddress:@"" name:@""];
+    for (SNSEmailGroup *group in emailGroups) {
+        WLGmailAddress *toAddress = [[WLGmailAddress alloc] initWithEmailAddress:group.email name:group.name];
+        WLGmailMessage *message = [[WLGmailMessage alloc] initWithSubject:self.subjectTextField.text body:@"" from:fromAddress to:toAddress];
+        [_gmailService sendEmail:message completionBlock:^(NSError *error) {
+            
+        }];
+    }
+    
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField

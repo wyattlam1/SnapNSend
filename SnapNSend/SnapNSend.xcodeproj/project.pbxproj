@@ -13,7 +13,6 @@
 		DB0613AE19BCD25D006E8E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0613AC19BCD25D006E8E9F /* InfoPlist.strings */; };
 		DB0613B019BCD25D006E8E9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613AF19BCD25D006E8E9F /* main.m */; };
 		DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B319BCD25D006E8E9F /* SNSAppDelegate.m */; };
-		DB0613B719BCD25D006E8E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0613B519BCD25D006E8E9F /* Main.storyboard */; };
 		DB0613BA19BCD25D006E8E9F /* SNSPhotoGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613B919BCD25D006E8E9F /* SNSPhotoGalleryViewController.m */; };
 		DB0613BF19BCD25D006E8E9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB0613BE19BCD25D006E8E9F /* Images.xcassets */; };
 		DB0613C619BCD25D006E8E9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613C519BCD25D006E8E9F /* XCTest.framework */; };
@@ -21,6 +20,8 @@
 		DB0613C819BCD25D006E8E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613A719BCD25D006E8E9F /* UIKit.framework */; };
 		DB0613D019BCD25D006E8E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0613CE19BCD25D006E8E9F /* InfoPlist.strings */; };
 		DB0613D219BCD25D006E8E9F /* SnapNSendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */; };
+		DB2E183619C517D000E77733 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2E183419C517D000E77733 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DB2E183719C517D000E77733 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2E183519C517D000E77733 /* GTMOAuth2ViewTouch.xib */; };
 		DB8D8BC619BEC1EE009DC1CB /* SNSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */; };
 		DB8D8BC819BEC673009DC1CB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */; };
 		DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BCA19C1181B009DC1CB /* SNSPhotoViewCell.m */; };
@@ -28,6 +29,9 @@
 		DB8D8BD519C159B5009DC1CB /* SNSEmailGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD419C159B5009DC1CB /* SNSEmailGroupViewController.m */; };
 		DB8D8BD819C22032009DC1CB /* SNSEmailGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BD719C22032009DC1CB /* SNSEmailGroupViewCell.m */; };
 		DB8D8BDC19C22AEC009DC1CB /* SNSEmailGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8BDB19C22AEC009DC1CB /* SNSEmailGroup.m */; };
+		DBC38C6019C2430D00FD2B80 /* libWLGmail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0613E219BCD26E006E8E9F /* libWLGmail.a */; };
+		DBC38C6A19C24B0F00FD2B80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0613B519BCD25D006E8E9F /* Main.storyboard */; };
+		DBC38C6C19C24B4200FD2B80 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC38C6B19C24B4200FD2B80 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,13 @@
 			remoteGlobalIDString = DB06135E19BBD470006E8E9F;
 			remoteInfo = WLGmailTests;
 		};
+		DBC38C5C19C2430800FD2B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB06134D19BBD470006E8E9F;
+			remoteInfo = WLGmail;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +86,9 @@
 		DB0613CF19BCD25D006E8E9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB0613D119BCD25D006E8E9F /* SnapNSendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnapNSendTests.m; sourceTree = "<group>"; };
 		DB0613DB19BCD26E006E8E9F /* WLGmail.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WLGmail.xcodeproj; path = ../WLGmail/WLGmail.xcodeproj; sourceTree = "<group>"; };
+		DB2E183319C517D000E77733 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMOAuth2ViewControllerTouch.h; path = GTMOAuth2ViewControllerTouch/GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
+		DB2E183419C517D000E77733 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMOAuth2ViewControllerTouch.m; path = GTMOAuth2ViewControllerTouch/GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
+		DB2E183519C517D000E77733 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = GTMOAuth2ViewControllerTouch/GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
 		DB8D8BC419BEC1EE009DC1CB /* SNSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSMasterViewController.h; path = Views/SNSMasterViewController.h; sourceTree = "<group>"; };
 		DB8D8BC519BEC1EE009DC1CB /* SNSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSMasterViewController.m; path = Views/SNSMasterViewController.m; sourceTree = "<group>"; };
 		DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -89,6 +103,9 @@
 		DB8D8BDA19C22AEC009DC1CB /* SNSEmailGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNSEmailGroup.h; path = DataObjects/SNSEmailGroup.h; sourceTree = "<group>"; };
 		DB8D8BDB19C22AEC009DC1CB /* SNSEmailGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNSEmailGroup.m; path = DataObjects/SNSEmailGroup.m; sourceTree = "<group>"; };
 		DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "../WLGmail/GTL/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
+		DBC38C6119C2431B00FD2B80 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "../WLGmail/GTL/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
+		DBC38C6719C24AF500FD2B80 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DBC38C6B19C24B4200FD2B80 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC38C6C19C24B4200FD2B80 /* SystemConfiguration.framework in Frameworks */,
+				DBC38C6019C2430D00FD2B80 /* libWLGmail.a in Frameworks */,
 				DB8D8BC819BEC673009DC1CB /* AssetsLibrary.framework in Frameworks */,
 				DB0613A619BCD25D006E8E9F /* CoreGraphics.framework in Frameworks */,
 				DB0613A819BCD25D006E8E9F /* UIKit.framework in Frameworks */,
@@ -139,6 +158,9 @@
 		DB0613A219BCD25D006E8E9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBC38C6B19C24B4200FD2B80 /* SystemConfiguration.framework */,
+				DBC38C6719C24AF500FD2B80 /* CFNetwork.framework */,
+				DBC38C6119C2431B00FD2B80 /* libGTLTouchStaticLib.a */,
 				DB8D8BC719BEC673009DC1CB /* AssetsLibrary.framework */,
 				DBA003A519BD2DAB001890D3 /* libGTLTouchStaticLib.a */,
 				DB0613A319BCD25D006E8E9F /* Foundation.framework */,
@@ -154,6 +176,7 @@
 			children = (
 				DB8D8BCC19C15344009DC1CB /* Categories */,
 				DB8D8BD919C22AD7009DC1CB /* DataObjects */,
+				DB2E183819C517D300E77733 /* GTMOAuth2ViewControllerTouch */,
 				DB0613BE19BCD25D006E8E9F /* Images.xcassets */,
 				DB0613B519BCD25D006E8E9F /* Main.storyboard */,
 				DB0613B219BCD25D006E8E9F /* SNSAppDelegate.h */,
@@ -200,6 +223,16 @@
 				DB0613E419BCD26E006E8E9F /* WLGmailTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DB2E183819C517D300E77733 /* GTMOAuth2ViewControllerTouch */ = {
+			isa = PBXGroup;
+			children = (
+				DB2E183319C517D000E77733 /* GTMOAuth2ViewControllerTouch.h */,
+				DB2E183419C517D000E77733 /* GTMOAuth2ViewControllerTouch.m */,
+				DB2E183519C517D000E77733 /* GTMOAuth2ViewTouch.xib */,
+			);
+			name = GTMOAuth2ViewControllerTouch;
 			sourceTree = "<group>";
 		};
 		DB8D8BC319BEC17E009DC1CB /* Views */ = {
@@ -251,6 +284,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DBC38C5D19C2430800FD2B80 /* PBXTargetDependency */,
 			);
 			name = SnapNSend;
 			productName = SnapNSend;
@@ -337,9 +371,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2E183719C517D000E77733 /* GTMOAuth2ViewTouch.xib in Resources */,
 				DB0613BF19BCD25D006E8E9F /* Images.xcassets in Resources */,
 				DB0613AE19BCD25D006E8E9F /* InfoPlist.strings in Resources */,
-				DB0613B719BCD25D006E8E9F /* Main.storyboard in Resources */,
+				DBC38C6A19C24B0F00FD2B80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +397,7 @@
 				DB8D8BDC19C22AEC009DC1CB /* SNSEmailGroup.m in Sources */,
 				DB0613B019BCD25D006E8E9F /* main.m in Sources */,
 				DB8D8BD219C153D5009DC1CB /* UIColor+SNSAdditions.m in Sources */,
+				DB2E183619C517D000E77733 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				DB8D8BD519C159B5009DC1CB /* SNSEmailGroupViewController.m in Sources */,
 				DB8D8BCB19C1181B009DC1CB /* SNSPhotoViewCell.m in Sources */,
 				DB0613B419BCD25D006E8E9F /* SNSAppDelegate.m in Sources */,
@@ -385,6 +421,11 @@
 			isa = PBXTargetDependency;
 			target = DB06139F19BCD25D006E8E9F /* SnapNSend */;
 			targetProxy = DB0613C919BCD25D006E8E9F /* PBXContainerItemProxy */;
+		};
+		DBC38C5D19C2430800FD2B80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WLGmail;
+			targetProxy = DBC38C5C19C2430800FD2B80 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -493,6 +534,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$BUILT_PRODUCTS_DIR/include/**",
+				);
 				INFOPLIST_FILE = "SnapNSend/SnapNSend-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,6 +556,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapNSend/SnapNSend-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$BUILT_PRODUCTS_DIR/include/**",
+				);
 				INFOPLIST_FILE = "SnapNSend/SnapNSend-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
