@@ -40,8 +40,8 @@ static NSString *EmailGroupViewCell = @"EmailGroupCell";
     self.collectionView.backgroundColor = [UIColor sns_darkGray];
     
 #warning remove
-    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" name:@"Wilson Lam" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm6.staticflickr.com/5592/14710378279_d9074a1d76_m_d.jpg"]]]];
-    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"masterpauline@gmail.com" name:@"Pauline Lam" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm4.staticflickr.com/3902/14674914914_df3fd400e3_m_d.jpg"]]]];
+    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wyatt.lam1@gmail.com" name:@"wyatt1" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm6.staticflickr.com/5592/14710378279_d9074a1d76_m_d.jpg"]]]];
+    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wyatt.lam90@gmail.com" name:@"wyatt90 Lam" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm4.staticflickr.com/3902/14674914914_df3fd400e3_m_d.jpg"]]]];
 //    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm8.staticflickr.com/7283/9457052576_ea62c41e07_m_d.jpg"]]]];
 //    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm8.staticflickr.com/7416/9252420074_073f15d95f_m_d.jpg"]]]];
 }

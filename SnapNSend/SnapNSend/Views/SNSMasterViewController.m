@@ -16,6 +16,7 @@
 #import "WLGmail/WLGmailService.h"
 #import "UIColor+SNSAdditions.h"
 
+static NSString *const kGTLAuthScopeGmailCompose = @"https://mail.google.com/";
 static NSString *const kClientID = @"186276393028-h84qv12meolpht4sa003csrlt74sldhj.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"KqRG4g83Xtq_-twoLoBFz171";
 static NSString *const kKeychainItemName = @"zaizaiwyatt";
@@ -56,17 +57,17 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 - (void)_setupGmailService
 {
     GTMOAuth2Authentication *auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName clientID:kClientID clientSecret:kClientSecret];
-    if (auth) {
-        GTMOAuth2ViewControllerTouch *authViewController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:@"" clientID:kClientID clientSecret:kClientSecret keychainItemName:kKeychainItemName completionHandler:^(GTMOAuth2ViewControllerTouch *viewController, GTMOAuth2Authentication *auth, NSError *error) {
+    if (!auth.canAuthorize) {
+        GTMOAuth2ViewControllerTouch *authViewController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeGmailCompose clientID:kClientID clientSecret:kClientSecret keychainItemName:kKeychainItemName completionHandler:^(GTMOAuth2ViewControllerTouch *viewController, GTMOAuth2Authentication *auth, NSError *error) {
             if (auth && !error) {
-                _gmailService = [[WLGmailService alloc] initWithEmailAddress:@"wyatt.lam1@gmail.com" authorizer:auth];
+                _gmailService = [[WLGmailService alloc] initWithEmailAddress:auth.userEmail authorizer:auth];
             } else {
                 NSLog(@"Failed to authenticate to Gmail: %@", error);
             }
         }];
         [self.navigationController pushViewController:authViewController animated:YES];
     } else {
-        _gmailService = [[WLGmailService alloc] initWithEmailAddress:@"wyatt.lam1@gmail.com" authorizer:auth];
+        _gmailService = [[WLGmailService alloc] initWithEmailAddress:auth.userEmail authorizer:auth];
     }
 }
 
@@ -122,6 +123,7 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 }
 
 #pragma mark - Subject Text Field
+
 - (IBAction)touchDownSendEmail:(id)sender
 {
     _sendButton.backgroundColor = [UIColor sns_lightBlue];
@@ -131,26 +133,33 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 {
     _sendButton.backgroundColor = [UIColor whiteColor];
     
-    NSArray *emailGroups = _emailGroupViewController.selectedGroups;
-    WLGmailAddress *fromAddress = [[WLGmailAddress alloc] initWithEmailAddress:@"" name:@""];
-    for (SNSEmailGroup *group in emailGroups) {
-        WLGmailAddress *toAddress = [[WLGmailAddress alloc] initWithEmailAddress:group.email name:group.name];
-        WLGmailMessage *message = [[WLGmailMessage alloc] initWithSubject:self.subjectTextField.text body:@"" from:fromAddress to:toAddress];
-        [_gmailService sendEmail:message completionBlock:^(NSError *error) {
-            
-        }];
+    if (!_emailGroupViewController.selectedGroups.count) {
+        [self _displayAlertWithTitle:@"Missing users." subtitle:@"Please select at least one user to send to."];
+    } else if (self.subjectTextField.text.length == 0) {
+        [self _displayAlertWithTitle:@"Missing subject." subtitle:@"Please fill in the subject line."];
+    } else {
+        NSArray *emailGroups = _emailGroupViewController.selectedGroups;
+        WLGmailAddress *fromAddress = [[WLGmailAddress alloc] initWithEmailAddress:_gmailService.emailAddress name:_gmailService.emailAddress];
+        for (SNSEmailGroup *group in emailGroups) {
+            WLGmailAddress *toAddress = [[WLGmailAddress alloc] initWithEmailAddress:group.email name:group.name];
+            WLGmailMessage *message = [[WLGmailMessage alloc] initWithSubject:self.subjectTextField.text body:@"" from:fromAddress to:toAddress];
+            [_gmailService sendEmail:message completionBlock:^(NSError *error) {
+                if (error) {
+                    NSLog(@"Failed to send email: %@", error);
+                }
+            }];
+        }
+        [self.view endEditing:YES];
+        self.subjectTextField.text = @"";
     }
-    
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    
-}
+#pragma mark - Private
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+- (void)_displayAlertWithTitle:(NSString *)title subtitle:(NSString *)subtitle
 {
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:subtitle delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 /*
