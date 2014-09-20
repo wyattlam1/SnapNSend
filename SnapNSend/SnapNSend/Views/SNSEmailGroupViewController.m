@@ -21,29 +21,29 @@ static NSString *EmailGroupViewCell = @"EmailGroupCell";
 
 @implementation SNSEmailGroupViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _groups = [NSMutableArray new];
     _mSelectedGroups = [NSMutableArray new];
     
-    [self.collectionView registerClass:[SNSEmailGroupViewCell class] forCellWithReuseIdentifier:EmailGroupViewCell];
-    self.collectionView.allowsMultipleSelection = YES;
-    self.collectionView.backgroundColor = [UIColor sns_darkGray];
+    [self setupCollectionView];
     
-#warning remove
     [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wyatt.lam1@gmail.com" name:@"wyatt1" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm6.staticflickr.com/5592/14710378279_d9074a1d76_m_d.jpg"]]]];
     [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wyatt.lam90@gmail.com" name:@"wyatt90 Lam" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm4.staticflickr.com/3902/14674914914_df3fd400e3_m_d.jpg"]]]];
 //    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm8.staticflickr.com/7283/9457052576_ea62c41e07_m_d.jpg"]]]];
 //    [_groups addObject:[[SNSEmailGroup alloc] initWithEmail:@"wilson.j.lam@gmail.com" thumbnail:[self imageFromURL:[NSURL URLWithString:@"https://farm8.staticflickr.com/7416/9252420074_073f15d95f_m_d.jpg"]]]];
+}
+
+- (void)setupCollectionView
+{
+    [self.collectionView registerClass:[SNSEmailGroupViewCell class] forCellWithReuseIdentifier:EmailGroupViewCell];
+    self.collectionView.allowsMultipleSelection = YES;
+    
+    CALayer *topBorder = [CALayer layer];
+    topBorder.backgroundColor = [UIColor sns_mediumGray].CGColor;
+    topBorder.frame = (CGRect){0, 0, CGRectGetWidth(self.view.frame), 1};
+    [self.view.layer addSublayer:topBorder];
 }
 
 - (UIImage *)imageFromURL:(NSURL *)imageURL
@@ -101,7 +101,8 @@ static NSString *EmailGroupViewCell = @"EmailGroupCell";
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(2, 5, 0, 0);
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)collectionView.collectionViewLayout;
+    return UIEdgeInsetsMake(0, layout.minimumLineSpacing, 0, 0);
 }
 
 @end

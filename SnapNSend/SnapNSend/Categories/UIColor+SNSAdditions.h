@@ -10,6 +10,10 @@
 
 @interface UIColor (SNSAdditions)
 
++ (UIColor *)sns_lightGray;
+
++ (UIColor *)sns_mediumGray;
+
 + (UIColor *)sns_darkGray;
 
 + (UIColor *)sns_lightBlue;

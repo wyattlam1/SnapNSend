@@ -43,8 +43,6 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
             [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
                 if (result) {
                     [_photos addObject:result];
-                } else {
-                    NSLog(@"NO RESULT: %ld", index);
                 }
             }];
             [self.collectionView reloadData];
@@ -59,9 +57,15 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 - (void)setupCollectionView
 {
     [self.collectionView registerClass:[SNSPhotoViewCell class] forCellWithReuseIdentifier:PhotoViewCell];
-    self.collectionView.backgroundColor = [UIColor sns_darkGray];
+    self.collectionView.backgroundColor = [UIColor blackColor];
     self.collectionView.allowsMultipleSelection = YES;
     self.collectionView.delegate = self;
+    
+    // transparent background for status bar
+    CALayer *statusBarBackground = [CALayer layer];
+    statusBarBackground.backgroundColor = [[UIColor sns_darkGray] colorWithAlphaComponent:0.7f].CGColor;
+    statusBarBackground.frame = (CGRect){0, 0, CGRectGetWidth(self.view.frame), 20};
+    [self.view.layer addSublayer:statusBarBackground];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,11 +137,6 @@ static NSString *PhotoViewCell = @"PhotoViewCell";
 {
     CGFloat width = CGRectGetWidth(self.view.frame) / 3.f - 2.f;
     return CGSizeMake(width, width);
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
 }
 
 @end

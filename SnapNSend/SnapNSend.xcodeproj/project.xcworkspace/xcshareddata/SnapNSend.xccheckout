@@ -10,31 +10,74 @@
 	<string>SnapNSend</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>54BA7109-0BA4-40E8-885A-66D72F1F3D0F</key>
+		<key>12875EDB7B37F761D6E8DC965983B5973B344AC4</key>
 		<string>https://github.com/wyattlam1/SnapNSend.git</string>
+		<key>22754eea-fc93-e339-b032-c1f495b90c16++2896</key>
+		<string>http://gtm-oauth2.googlecode.com/svn/trunk/Source</string>
+		<key>3B2F898FADD5735AF2C2786013EE3FD67A2D876B</key>
+		<string>https://github.com/wyattlam1/WLGmail.git</string>
+		<key>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</key>
+		<string>http://gtm-http-fetcher.googlecode.com/svn/trunk/Source</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SnapNSend/SnapNSend.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>54BA7109-0BA4-40E8-885A-66D72F1F3D0F</key>
+		<key>12875EDB7B37F761D6E8DC965983B5973B344AC4</key>
 		<string>../../..</string>
+		<key>22754eea-fc93-e339-b032-c1f495b90c16++2896</key>
+		<string>../../../WLGmail/GTL/OAuth2</string>
+		<key>3B2F898FADD5735AF2C2786013EE3FD67A2D876B</key>
+		<string>../../../WLGmail</string>
+		<key>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</key>
+		<string>../../../WLGmail/GTL/HTTPFetcher</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>22754eea-fc93-e339-b032-c1f495b90c16++2896</key>
+		<string>http://gtm-oauth2.googlecode.com/svn</string>
+		<key>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</key>
+		<string>http://gtm-http-fetcher.googlecode.com/svn</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/wyattlam1/SnapNSend.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>54BA7109-0BA4-40E8-885A-66D72F1F3D0F</string>
+	<string>12875EDB7B37F761D6E8DC965983B5973B344AC4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HTTPFetcher</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>22754eea-fc93-e339-b032-c1f495b90c16++2896</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OAuth2</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>54BA7109-0BA4-40E8-885A-66D72F1F3D0F</string>
+			<string>12875EDB7B37F761D6E8DC965983B5973B344AC4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SnapNSend</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3B2F898FADD5735AF2C2786013EE3FD67A2D876B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WLGmail</string>
 		</dict>
 	</array>
 </dict>

@@ -24,7 +24,7 @@ static const float kThumbnailAlphaValue = 0.3f;
         self.layer.borderColor = [UIColor blackColor].CGColor;
         self.layer.masksToBounds = YES;
         
-        _thumbnailView = [[UIImageView alloc] initWithFrame:(CGRect){0,0, .size = frame.size}];
+        _thumbnailView = [[UIImageView alloc] initWithFrame:(CGRect){ 0,0, .size = frame.size}];
         [self addSubview:_thumbnailView];
     }
     return self;
@@ -45,6 +45,7 @@ static const float kThumbnailAlphaValue = 0.3f;
         
         _thumbnail = [UIImage imageWithCGImage:thumbnail.CGImage scale:ratio orientation:UIImageOrientationUp];
         _thumbnailView.frame = (CGRect){(_thumbnailView.frame.size.width - _thumbnail.size.width) / 2.f, 0, .size = _thumbnail.size};
+        _thumbnailView.frame = (CGRect){0, 0, .size = _thumbnail.size};
         _thumbnailView.image = _thumbnail;
         _thumbnailView.alpha = kThumbnailAlphaValue;
         [_thumbnailView setNeedsDisplay];

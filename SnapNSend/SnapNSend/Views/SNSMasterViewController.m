@@ -45,13 +45,17 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
 
     [self _setupGmailService];
     
-    self.view.backgroundColor = [UIColor sns_darkGray];
     _defaultOrignY = self.view.frame.origin.y;
-    
+    self.view.backgroundColor = [UIColor sns_lightGray];
     self.subjectTextField.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsHidden:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)_setupGmailService
@@ -65,8 +69,10 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
                 NSLog(@"Failed to authenticate to Gmail: %@", error);
             }
         }];
+        [authViewController.navigationItem setHidesBackButton:YES animated:NO];
         [self.navigationController pushViewController:authViewController animated:YES];
     } else {
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
         _gmailService = [[WLGmailService alloc] initWithEmailAddress:auth.userEmail authorizer:auth];
     }
 }
@@ -161,16 +167,5 @@ static const NSInteger SNSBottomKeyboardPadding = 3;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:subtitle delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
